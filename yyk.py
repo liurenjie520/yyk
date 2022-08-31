@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # 买内裤脚本@feller
 import requests, json
-
+print("正在查询你的内裤再哪个门店有优惠...........")
 def get_mendian(id):
     id = id
     url = 'https://d.uniqlo.cn/p/hmall-store-service/i/site/base/queryOthers/zh_CN'
@@ -95,7 +95,7 @@ for w in mendian_v2:
 # print(a)
 
 
-dizhi=''
+dizhi=[]
 lsttt=list(set(numbers))
 lsttt.sort(reverse=True)
 for shuju in lsttt:
@@ -104,10 +104,13 @@ for shuju in lsttt:
         if get_mendian((mendian_code))=='门店不在上海':
             continue
         else:
-            dizhi = get_mendian((mendian_code))+","+dizhi
+            dizhi.append(get_mendian((mendian_code)))
 
 
-print(dizhi)
+print("查询结果如下：")
+for shuchu in dizhi:
+    print(shuchu)
+
 
 
 
