@@ -146,11 +146,11 @@ def get_sh_goods():
     url = 'https://a.uniqlo.cn/m/hmall-sc-service/search/searchWithDescriptionAndConditions/zh_CN'
     HEADERS = {'Content-Type': 'application/json'}
     FormData = formdata()
-    print(FormData)
+    # print(FormData)
     res = requests.post(url=url, json=FormData, headers=HEADERS)
 
     res = res.text
-    print(res)
+    # print(res)
     jsonobj = json.loads(res)
     try:
         toCntPercent = jsonobj['resp'][1]
@@ -178,7 +178,7 @@ def get_sh_goods():
             a[w] = mendian_v2.count(w)
             # print((mendian_v2.count(w)))
             numbers.append(mendian_v2.count(w))
-    print(a)
+    # print(a)
 
     dizhi = []
     lsttt = list(set(numbers))  # 去重  排序
