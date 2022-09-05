@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # 买内裤脚本@feller
 import sys
+import datetime
 
 import requests, json
 
@@ -209,10 +210,14 @@ def get_sh_goods():
         for shuchu in dizhi:
             summary.append(shuchu)
             content =content+shuchu+"\n\n"
-            print(shuchu)
+            # print(shuchu)
     else:
         print('查询不到商品！')
     summary_v2="查询结果如下："+'\n'+summary[0]+'\n'+summary[1]+'\n'+summary[2]
+    now = "------------------" + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + "------------------"+"\n"
+    with open("content.txt", "a",encoding='utf-8') as file:
+        file.write(now)
+        file.write(content)
     # print(summary[0])
 
     # print(summary[1])
