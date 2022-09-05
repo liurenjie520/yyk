@@ -210,7 +210,7 @@ def get_sh_store(code):
 
     tinydict = {}
     for i in toCntPercent:
-        tinydict[i['code']] = i['fullAddress']  # 添加  fullAddress  .displayName
+        tinydict[i['code']] = i['displayName']+"；地址："+i['fullAddress'] +"；营业时间："+i['businessHours'].rstrip('\n')+"；店铺状态："+i['shopStatus']# 添加  fullAddress  .displayName
 
     try:
         name = tinydict[f"{code}"]
